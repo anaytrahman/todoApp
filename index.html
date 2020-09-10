@@ -1,38 +1,81 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title> Todo app </title>
-		<link rel="stylesheet" href="./css/style.css">
-	</head>
-	<body>
-		<div class="main-container">
-			<header class="app-header">
-				<h1 class="text-white-align"> Just simple TodoApp </h1>
-			</header>
-			<section class="app-main-section">
-				<div class="todo-title-wrapper">
-					<input type="text" class="input" id="todo-title" value="Schedule:-" 
-					placeholder="Please enter todo title">
-				</div>
-				<div class="todo-descrp-wrapper">
-					<textarea class="input" id="todo-descrp" value="my schedule" 
-					placeholder="Enter Description"></textarea>
-				</div>
-				<div class="todo-btn-wrapper">
-					<button class="input" type="button" id="save-btn">Save Todo</button>
-				</div>
-				
-				
-				<div class="show-todo-wrapper">
-					<ul id="todo-list">
-						
-					</ul>
-				</div>
-			</section>
-			<footer class="app-footer">
-				<h3 class="text-white-align"> Create your todo list  </h3>
-			</footer>
-		</div>
-		<script src="./js/script.js"> </script>
-	</body>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Create Your Todo</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- partial:index.partial.html -->
+  <div class="main-container">
+    <header class="app-header">
+      <h1 class="text-white-align"> Just simple TodoApp </h1>
+    </header>
+    <section class="app-main-section">
+      <div class="todo-title-wrapper">
+        <input type="text" class="input" id="todo-title" value="" placeholder="Please enter todo title">
+      </div>
+      <div class="todo-descrp-wrapper">
+        <textarea class="input" id="todo-descrp" value="my schedule" placeholder="Enter Description"></textarea>
+      </div>
+      <div class="todo-btn-wrapper">
+        <button class="input btn btn-secondary" type="button" id="save-btn">Save Todo</button>
+      </div>
+
+
+    </section>
+
+    <div class="show-todo-wrapper">
+
+      <article id="todo-list">
+      </article>
+
+    </div>
+    <!-- Show todo wrapper end-->
+
+
+    <footer class="app-footer">
+      <h3 class="text-white-align"> Create your todo list </h3>
+    </footer>
+
+
+    <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Edit Todo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="edit-todo">
+          <input class="form-control" id="todo-title-edit" type="text" placeholder="Default input">
+          <input class="form-control" id="todo-descrp-edit" type="text" placeholder="Default input">
+          <button type="button" id="updateTodo" class="btn btn-primary" data-dismiss="modal">Update</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+  <!-- partial -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+<script  src="./js/script.js"></script>
+
+</body>
 </html>

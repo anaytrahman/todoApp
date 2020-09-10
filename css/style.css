@@ -1,64 +1,73 @@
-*{
-	margin: 0;
-	padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-	
+body {
 }
 
 .main-container {
-    max-width: 64%;
-    margin: 0 auto;
-    margin-top: 15px;
-	background-color: #89868638;
-	
+  max-width: 64%;
+  margin: 0 auto;
+  margin-top: 15px;
+  background-color: #89868638;
 }
 
-.app-header, .app-footer {
-	background-color: #898686de;
-	padding: 7px 2px;
-	margin-bottom: 20px;
+.app-header,
+.app-footer {
+  background-color: #898686de;
+  padding: 7px 2px;
+  margin-bottom: 20px;
 }
 
-.app-main-section{
-margin: 0 auto;
-    width: 53%;
+.app-main-section {
+  margin: 0 auto;
+  width: 53%;
 }
-h1{
-	
+h1 {
 }
-.input{
-	
-	 width: 100%;
-    padding: 8px 11px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
+.input {
+  width: 100%;
+  padding: 8px 11px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
 }
-.input:hover{
-	
-	cursor: pointer;
-	opacity: 50%;
-	
+.input:hover {
+  cursor: pointer;
+  opacity: 50%;
 }
 .show-todo-wrapper {
-    padding: 14px 33px;
-	
-}
-p{
-	color: green;
-	font-size: 25px;
-	margin-left: 20px;
+  padding: 14px 33px;
+  
 }
 
-li{
-	color: red;
-	font-size: 30px;
-	
-}
-.text-white-align{
-	color: white;
-	text-align: center;
+#todo-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.show-todo-wrapper .card {
+  margin: 5px;
+}
+
+p {
+  color: black;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+li {
+  color: red;
+  font-size: 30px;
+  display: flex;
+  font-size:15px;
+}
+p.desc {
+  font-size: 14px;
+}
+.text-white-align {
+  color: white;
+  text-align: center;
+}
