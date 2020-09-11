@@ -4,11 +4,10 @@ var $saveBtn = document.querySelector("#save-btn");
 var $todoList = document.querySelector("#todo-list");
 var $editTodo = document.querySelector("#edit-todo");
 
-$todoTitle.focus();
-// this is for user value title and description
+//for user value title and description
 var todoList = [];
 
-//btn to create todo on click mathod
+//btn to handle create
 $saveBtn.addEventListener("click", function () {
   createTodo();
 });
@@ -16,7 +15,7 @@ $saveBtn.addEventListener("click", function () {
 window.addEventListener("keyup", function(e) {
   var currentKey = e.key;
 
-  // check enter for create todo
+  // check enter
   if(currentKey.toLowerCase() === "enter") {
     createTodo();
   }
@@ -24,16 +23,15 @@ window.addEventListener("keyup", function(e) {
   if(e.key === "Escape") {
     window.close();
   }
-  
 });
 
 
-//the function will create todo and get the data from user
+//the function will create todo and get the data
 function createTodo() {
   var titleVal = $todoTitle.value;
   var descrpVal = $todoDescrp.value;
   
-  // event entered multiple spaces will be removed by trim() mathod
+  // event entered multiple space will be removed because of trim() method
   if (titleVal.trim() != "") {
     todoList.push({
       title: titleVal,
@@ -42,7 +40,7 @@ function createTodo() {
 
     showDOMList();
     
-    // reset user value and make focus on title input
+    // reset value and make focus on title again
     $todoTitle.value = "";
     $todoDescrp.value = "";
     $todoTitle.focus();
@@ -51,10 +49,10 @@ function createTodo() {
   }
 }
 
-// Show all data to the list output
+// Show data to the list
 function showDOMList() {
-
-  //it will reset element on every click
+  console.log('todo', todoList);
+  // reset element on every click
   $todoList.innerHTML = "";
  
   
@@ -88,28 +86,33 @@ var iconDelete = `
     </div>
     `;
 
-    //new created todo will be show here
+    //new created todo will show
     $todoList.insertAdjacentHTML(
       "beforeend",
       listDOM
     );
   }
   
-  
+  //store data
+  storeTodo();
 }
 
 // this will delete a item
 function deleteTodo(index) {
-  // delete item from the todo array
-  todoList.splice(index,1);
-  alert('Todo deleted!!!');
-
-  showDOMList();
-
+  // show confirm box
+  var deleteConfirmation = confirm("Are you sure?");
+  // if yes delete or if no dont delete
+  if(deleteConfirmation) {
+      // delete item from the todo array
+      todoList.splice(index,1);
+      showDOMList();
+      
+      // todo: will show a good looking notification message
+  }
  }
 
 
- // get and set update value here
+ // get and set update value
 function getTodoForUpdate(index, title, descrp) {
   var $editTitle = $editTodo.querySelector("#todo-title-edit");
   var $editDescrp = $editTodo.querySelector("#todo-descrp-edit");
@@ -137,9 +140,20 @@ function updateTodo(index, updatedTitle, updatedDescrp) {
       descrp: updatedDescrp
     }
   );
-  
 
   showDOMList();
 }
 
-//store data upcoming task
+// handle storage of todo
+function storeTodo() {
+  //todoList
+  console.log('ls fired');
+
+  console.log(todoList);
+  console.log(JSON.stringify(todoList));
+
+  // JSON.stringify is a converter of object or aaray into string
+  var arrToString = JSON.stringify(todoList);
+
+  localStorage.setItem('todoListArr', arrToString);
+}
