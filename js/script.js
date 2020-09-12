@@ -60,6 +60,12 @@ function createTodo() {
 
     showDOMList();
 
+    document.querySelector("#notificationMsg").classList.add("show");
+
+    setTimeout(function() {
+      document.querySelector("#notificationMsg").classList.remove("show");
+    }, 3000);
+
     // reset value and make focus on title again
     $todoTitle.value = "";
     $todoDescrp.value = "";
@@ -166,11 +172,6 @@ function updateTodo(index, updatedTitle, updatedDescrp) {
 
 // handle storage of todo
 function storeTodo() {
-  //todoList
-  console.log('ls fired');
-
-  console.log(todoList);
-  console.log(JSON.stringify(todoList));
 
   // JSON.stringify is a converter of object or aaray into string
   var arrToString = JSON.stringify(todoList);
