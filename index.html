@@ -22,7 +22,7 @@
         <textarea class="input" id="todo-descrp" value="my schedule" placeholder="Enter Description"></textarea>
       </div>
       <div class="todo-btn-wrapper">
-        <button class="input btn btn-secondary" type="button" id="save-btn">Save Todo</button>
+        <button class="input btn btn-secondary" type="button" id="save-btn" data-toggle="tooltip" data-placement="top" title="Create todo">Save Todo</button>
       </div>
 
 
@@ -31,10 +31,21 @@
     <div class="show-todo-wrapper">
 
       <article id="todo-list">
+        <div class="alert alert-primary" role="alert">
+          There is no todo, please create one
+        </div>
       </article>
 
     </div>
     <!-- Show todo wrapper end-->
+
+
+    <div class="alert alert-warning alert-dismissible fade" id="notificationMsg" role="alert">
+      <strong>Success</strong> Your todo has been created.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
 
 
     <footer class="app-footer">
