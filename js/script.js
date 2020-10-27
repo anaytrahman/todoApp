@@ -154,6 +154,7 @@ function getTodoForUpdate(index, title, descrp) {
 
     // update todo
     updateTodo(index, updatedTitle, updatedDescrp);
+	
   }
 }
 

@@ -45,6 +45,7 @@ h1 {
 #todo-list {
   display: flex;
   flex-wrap: wrap;
+      justify-content: center;
 }
 
 .show-todo-wrapper .card {
@@ -70,4 +71,6 @@ p.desc {
 .text-white-align {
   color: white;
   text-align: center;
+
+
 }
